@@ -15,14 +15,16 @@
         <img src="/assests/bblogo.jpg" alt="logo" width="200px" height="60px">
       </a>
       <ul class="links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#home">Home</a></li> <!-- Add id for home if needed -->
+        <li><a href="#about">About</a></li> <!-- Add href to about section -->
+        <li><a href="#contact">Contact Us</a></li> <!-- Add href to contact section -->
       </ul>
       <button class="login-btn">Log In</button>
     </nav>
   </header>
   <div class="blur"></div>
   <main>
+    <section id="home">
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
       <div class="mySlides fade">
@@ -55,7 +57,47 @@
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
+  </section>
+  <section id="about">
+    <div class="about">
+      <div class="heading">About</div>
+      <div class="box">
+        <div class="content">
+          <div class="para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores facere ut itaque maxime dolor accusantium amet modi voluptatem eos, corporis, quae veniam rerum eligendi eveniet aut necessitatibus. Corrupti possimus incidunt porro harum enim, nam rem tenetur maiores nemo quos et, quod tempore iste, unde qui cupiditate alias quis exercitationem nihil?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique consectetur error consequuntur eaque corporis architecto blanditiis recusandae magni perferendis? Delectus, facere magni consequatur quod iusto adipisci ratione consequuntur amet! Autem!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt illum omnis accusamus aperiam mollitia labore dignissimos similique, officiis error placeat repellendus cupiditate temporibus voluptates facere!
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="/assests/img1.jpg" alt="" width="300px" height="300px">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="contact">
+      <div class="heading">Contact Us</div>
+      <div class="box">
+        <div class="contact-image">
+          <img src="/assests/img1.jpg" alt="" width="300px" height="300px">
+        </div>
+        <div class="content">
+          <form action="">
+          <label for="comment">Type Your Comments Here:</label>
+          <div class="input-field">
+            <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+          </div>
+          <button class="submit" type="submit">Submit</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </section>
   </main>
+  <footer>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fuga quae alias doloribus enim exercitationem voluptatem, ea consectetur expedita blanditiis?
+  </footer>
+  
 
 
   <!-- login form -->
@@ -71,11 +113,9 @@
           <h2>Login</h2>
           <div class="input-field">
             <input type="text" id="username" placeholder="Username or Email" required>
-            <label for="email">Email</label>
           </div>
           <div class="input-field">
             <input type="password" id="password" placeholder="Password" required>
-            <label for="password">Password</label>
           </div>
           <button class="submit-btn" type="submit">Login</button>
         </form>
@@ -91,15 +131,13 @@
         <h2>Register</h2>
         <div class="input-field">
           <input type="text" id="regUsername" placeholder="Username" required>
-          <label for="email">Username</label>
         </div>
         <div class="input-field">
           <input type="password" id="regPassword" placeholder="Password" required>
-          <label for="password">Password</label>
+        
         </div>
         <div class="input-field">
           <input type="text" id="regName" placeholder="Name" required>
-          <label for="name">Name</label>
         </div>
         <div class="input-field-gender">
           <label class="gender-label">Gender</label>
@@ -117,11 +155,9 @@
         </div>
         <div class="input-field">
           <input type="tel" id="regPhone" placeholder="Phone Number" required>
-          <label for="phone">Phone Number</label>
         </div>
         <div class="input-field">
           <input type="email" id="regEmail" placeholder="Email" required>
-          <label for="email">Email</label>
         </div>
         <button class="submit-btn" type="submit">Register</button>
     </form>
@@ -130,15 +166,9 @@
     <p id="registerSuccess" style="color:green;"></p>
       <p>Already have an Account? <a href="#" id="loginLink">Login</a></p>
     </div>
-
-  
   </div>
-
-
-
-
-
   <script src="script.js"></script>
 </body>
 
 </html>
+

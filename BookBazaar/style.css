@@ -6,11 +6,20 @@
     font-weight: 400;
     font-style: normal;
 }
-body{
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgb(81, 81, 208),rgb(154, 154, 205));
+:root {
+  --beige: #f2ede9;
+  --black:#222222;
+  --white: #dedede;
 }
+html, body {
+  height: 100%; /* Full height of the viewport */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use Flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  scroll-behavior: smooth;
+}
+
+
 header{
     width: 100%;
     position:scroll;
@@ -31,14 +40,13 @@ header{
     gap: 35px;
 }
 .navbar .links a{
-    color: #fff;
+    color: var(--black);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
 }
 .navbar .links a:hover{
-    color: #1d19ff;
     font-weight: 900;
 }
 .navbar .login-btn{
@@ -49,14 +57,21 @@ header{
     padding: 10px 18px;
     border-radius: 5px;
     cursor: pointer;
-    background: #fff;
-    color: #275360;
+    background-color: var(--black);
+    color: var(--white);
 }
 
 /* carousel */
 main{
-    width: 80%;
-    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    flex-grow: 1; 
+}
+section{
+  width: 80%;
+    height: 85vh;
     margin: auto;
 }
 .slideshow-container {
@@ -97,12 +112,12 @@ main{
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: var(--black);
   }
   
   /* Caption text */
   .text {
-    color: #f2f2f2;
+    color: var(--white);
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -113,7 +128,7 @@ main{
   
   /* Number text (1/3 etc) */
   .numbertext {
-    color: #f2f2f2;
+    color: var(--white);
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -133,7 +148,7 @@ main{
   }
   
   .active, .dot:hover {
-    background-color: #717171;
+    background-color: var(--black);
   }
   
   /* Fading animation */
@@ -191,17 +206,20 @@ display: none;
 }
 
 .form-box {
-  background-color: white;
+  background-color: var(--black);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
   padding: 30px;
+  color: var(--white);
 }
 .close-btn{
   position: absolute;
   top: 12px;
   right: 470px;
+  background-color: var(--beige);
+  color: var(--black);
 }
 
 .content-box {
@@ -211,12 +229,11 @@ display: none;
 
 h2 {
   font-size: 24px;
-  color: #333;
+  
 }
 
 p {
   font-size: 16px;
-  color: #777;
 }
 
 /* Form Styling */
@@ -228,7 +245,6 @@ p {
 
 form h2 {
   font-size: 22px;
-  color: #333;
   margin-bottom: 20px;
 }
 
@@ -236,33 +252,25 @@ form h2 {
   position: relative;
   margin-bottom: 20px;
   width: 100%;
+  background-color: var(--beige);
+  color: var(--white);
 }
 
 .input-field input {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
+  font-size: 1.1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 6px;
   box-sizing: border-box;
 }
 
-.input-field label {
-  position: absolute;
-  top: -10px;
-  left: 12px;
-  font-size: 14px;
-  color: #333;
-  background-color: white;
-  padding: 0 5px;
-  transition: all 0.3s;
-}
 
 .input-field input:focus + label,
 .input-field input:not(:placeholder-shown) + label {
   top: -20px;
-  font-size: 12px;
+  font-size: 1rem;
   color: #007bff;
 }
 
@@ -329,7 +337,7 @@ p a:hover {
 
 .gender-label {
   font-size: 14px;
-  color: #333;
+  color: var(--white);
   margin-bottom: 6px;
   display: block;
   font-weight: 600;
@@ -345,7 +353,7 @@ p a:hover {
 /* Styling for each label (radio button + text) */
 .gender-options label {
   font-size: 16px;
-  color: #333;
+  color: var(--white);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -382,11 +390,91 @@ p a:hover {
 }
 
 #registerSuccess {
-  font-size: 14px;
+  font-size: 1.2rem;
   color: green;
   margin-top: 10px;
   text-align: center;
 }
+
+.about,.contact{
+  background-color: var(--black);
+  width: 100%;
+  min-height: 90vh;
+  border-radius: 5px;
+  position: relative;
+}
+.contact{
+  min-height: 70vh;
+}
+.about .heading,.contact .heading{
+  margin: 10px;
+  color: var(--white);
+  font-size: 2rem;
+}
+.about .box,.contact .box{
+  background-color: var(--beige);
+  width:80% ;
+  min-height: 60vh;
+  border: 2px solid var(--black);
+  margin: auto;
+  color: var(--black);
+  position: absolute;
+  top: 40px;
+  left: 95px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.about .box .content{
+  width: 50%;
+  font-size: 20px;
+  text-align:justify;
+}
+.contact .box .content{
+  width: 50%;
+
+}
+.about .box .about-image img,.contact .box .contact-image img{
+  border-radius: 20px;
+
+}
+.contact .box .content label{
+  font-size: 1.4rem;
+  padding: 3px;
+  margin: 5px;
+}
+.contact .box .content #comments{
+  padding: 3px;
+  margin: 5px;
+}
+.submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 380px;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px 0; /* Optional: for spacing inside the footer */
+  text-align: center; /* Center the content */
+  position: relative; /* Normal positioning */
+  bottom: 0;
+  margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+
 
 /* Responsive */
 @media screen and (max-width: 480px) {
@@ -404,3 +492,5 @@ p a:hover {
     font-size: 14px;
   }
 }
+
+
